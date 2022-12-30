@@ -1,5 +1,5 @@
-//public class TonerTechnician extends Thread {
-    public class TonerTechnician implements Runnable {
+//THREAD CLASS
+public class TonerTechnician implements Runnable {
 
     private String technicianName;
     private ThreadGroup technicianThreadGroup;

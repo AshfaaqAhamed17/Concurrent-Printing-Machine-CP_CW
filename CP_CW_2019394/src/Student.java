@@ -1,6 +1,5 @@
 //THREAD CLASS
-//public class Student extends Thread{
-    public class Student implements Runnable{
+public class Student implements Runnable{
 
     private String studentName;
     private ThreadGroup studentThreadGroup;

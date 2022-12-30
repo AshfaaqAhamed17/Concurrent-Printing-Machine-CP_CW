@@ -1,4 +1,4 @@
-//public class PaperTechnician extends Thread{
+//THREAD CLASS
 public class PaperTechnician implements Runnable{
 
     private String technicianName;

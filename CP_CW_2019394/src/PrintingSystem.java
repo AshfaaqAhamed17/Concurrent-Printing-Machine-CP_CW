@@ -25,8 +25,6 @@ public class PrintingSystem {
         Thread paperTechnician = new Thread(technicians, runnablePaperTechnician, "Tech 01");
         Thread tonerTechnician = new Thread(technicians, runnableTonerTechnician, "Tech 02");
 
-        // start the threads so that they enter the runnable state and await their turn of execution
-        // however, we cannot assure which thread will actually execute first or the order in which they'll execute
         student1.start();
         student2.start();
         student3.start();
@@ -34,8 +32,6 @@ public class PrintingSystem {
         paperTechnician.start();
         tonerTechnician.start();
 
-        // wait for all threads to terminate upon completion of their execution
-        // before proceeding to print the summary and exit the program
         student1.join();
         student2.join();
         student3.join();
@@ -66,8 +62,6 @@ public class PrintingSystem {
                     System.out.println("=                                 Thank you for using \"" + ((LaserPrinter) laserPrinter).getNameOfPrinter()+"\"                                   =");
                     System.out.println("=========================================================================================================");
                     break optionMenu;
-//                    System.out.println("Thank you for using " + ((LaserPrinter) laserPrinter).getName());
-
                 default:
                     System.out.println("\n------------------------------Invalid Option------------------------------\n");
                     break;

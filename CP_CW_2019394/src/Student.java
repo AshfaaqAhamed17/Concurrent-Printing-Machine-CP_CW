@@ -1,10 +1,15 @@
 //THREAD CLASS
-public class Student extends Thread{
+//public class Student extends Thread{
+    public class Student implements Runnable{
 
+    private String studentName;
+    private ThreadGroup studentThreadGroup;
     private Printer printer;
 
     public Student(String studentName, ThreadGroup studentThreadGroup, Printer printer) {
-        super(studentThreadGroup, studentName);
+        super();
+        this.studentName = studentName;
+        this.studentThreadGroup = studentThreadGroup;
         this.printer = printer;
     }
 
@@ -13,11 +18,11 @@ public class Student extends Thread{
         Document[] document = new Document[5];
         int numberOfTotalPages = 0;
 
-        document[0] = new Document(Thread.currentThread().getName(), "FYP - Proposal", 5);
+        document[0] = new Document(Thread.currentThread().getName(), "FYP - Proposal", 10);
         document[1] = new Document(Thread.currentThread().getName(), "CP", 10);
-        document[2] = new Document(Thread.currentThread().getName(), "FYP - Thesis", 7);
+        document[2] = new Document(Thread.currentThread().getName(), "FYP - Thesis", 10);
         document[3] = new Document(Thread.currentThread().getName(), "ASS-WD", 10);
-        document[4] = new Document(Thread.currentThread().getName(), "FM", 8);
+        document[4] = new Document(Thread.currentThread().getName(), "FM", 10);
 
         for (Document documentContext: document) {
             printer.printDocument(documentContext);
@@ -32,9 +37,6 @@ public class Student extends Thread{
         }
 
         System.out.println(" ------>> " + Thread.currentThread().getName() + " finished Printing: 5 Documents, " + numberOfTotalPages + " pages <<------");
-
-
-
 
     }
 }

@@ -14,16 +14,16 @@ public class Student implements Runnable{
 
     @Override
     public void run() {
-        Document[] document = new Document[5];
+        Document[] documentToPrint = new Document[5];
         int numberOfTotalPages = 0;
 
-        document[0] = new Document(Thread.currentThread().getName(), "FYP - Proposal", 10);
-        document[1] = new Document(Thread.currentThread().getName(), "CP", 10);
-        document[2] = new Document(Thread.currentThread().getName(), "FYP - Thesis", 10);
-        document[3] = new Document(Thread.currentThread().getName(), "ASS-WD", 10);
-        document[4] = new Document(Thread.currentThread().getName(), "FM", 10);
+        documentToPrint[0] = new Document(Thread.currentThread().getName(), "Module No. 001", 2);
+        documentToPrint[1] = new Document(Thread.currentThread().getName(), "Module No. 002", 5);
+        documentToPrint[2] = new Document(Thread.currentThread().getName(), "Module No. 003", 10);
+        documentToPrint[3] = new Document(Thread.currentThread().getName(), "Module No. 004", 8);
+        documentToPrint[4] = new Document(Thread.currentThread().getName(), "Module No. 005", 15);
 
-        for (Document documentContext: document) {
+        for (Document documentContext: documentToPrint) {
             printer.printDocument(documentContext);
             numberOfTotalPages+=documentContext.getNumberOfPages();
 

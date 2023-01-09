@@ -25,14 +25,14 @@ public class LaserPrinter implements ServicePrinter{
         boolean lowTonerLevel = document.getNumberOfPages() > currentTonerLevel;
         while (lowPaperLevel || lowTonerLevel){
             if (lowPaperLevel && lowTonerLevel){
-                System.out.println("INSUFFICIENT TONER LEVEL & PAPER LEVEL -> " + "Printing document pause. -- NAME: " + document.getUserID() + " | DOC NAME: " + document.getDocumentName() +
-                        " | Number of pages: " + document.getNumberOfPages());
+                System.out.println("INSUFFICIENT TONER LEVEL & PAPER LEVEL -> " + "Printing document pause. -- NAME OF STUDENT: " + document.getUserID() + " | DOCUMENT TITLE: " + document.getDocumentName() +
+                        " | NUMBER OF PAGES: " + document.getNumberOfPages());
             }else if (lowTonerLevel){
-                System.out.println("INSUFFICIENT TONER LEVEL -> " + "Printing document pause. -- NAME: " + document.getUserID() + " | DOC NAME: " + document.getDocumentName() +
-                        " | Number of pages: " + document.getNumberOfPages());
+                System.out.println("INSUFFICIENT TONER LEVEL -> " + "Printing document pause. -- NAME OF STUDENT: " + document.getUserID() + " | DOCUMENT TITLE: " + document.getDocumentName() +
+                        " | NUMBER OF PAGES: " + document.getNumberOfPages());
             }else{
-                System.out.println("INSUFFICIENT PAPER LEVEL -> " + "Printing document pause. -- NAME: " + document.getUserID() + " | DOC NAME: " + document.getDocumentName() +
-                        " | Number of pages: " + document.getNumberOfPages());
+                System.out.println("INSUFFICIENT PAPER LEVEL -> " + "Printing document pause. -- NAME OF STUDENT: " + document.getUserID() + " | DOCUMENT TITLE: " + document.getDocumentName() +
+                        " | NUMBER OF PAGES: " + document.getNumberOfPages());
             }
             try {
                 wait();
@@ -42,8 +42,8 @@ public class LaserPrinter implements ServicePrinter{
                 e.printStackTrace();
             }
         }
-        System.out.println("\tPrinting document... NAME: " + document.getUserID() + " | DOC NAME: " + document.getDocumentName() +
-                " | Number of pages: " + document.getNumberOfPages());
+        System.out.println("\tPrinting document... NAME OF STUDENT: " + document.getUserID() + " | DOCUMENT TITLE: " + document.getDocumentName() +
+                " | NUMBER OF PAGES: " + document.getNumberOfPages());
         currentTonerLevel -= document.getNumberOfPages();
         currentPaperLevel -= document.getNumberOfPages();
         numOfDocPrinted++;
@@ -56,7 +56,7 @@ public class LaserPrinter implements ServicePrinter{
         this.tonerReplaced = false;
         boolean unableToRefillToner = currentTonerLevel > MINIMUM_TONER_LEVEL;
         while (unableToRefillToner){
-            System.out.println("(TONER LEVEL CHECK...) Toner Cartridge level is available... Current toner level is " + currentTonerLevel);
+            System.out.println("(CHECKING ON THE TONER LEVEL...) Toner Cartridge level is available... Current toner level is " + currentTonerLevel);
             try {
                 wait(5000);
                 unableToRefillToner = currentTonerLevel >= MINIMUM_TONER_LEVEL;
@@ -65,8 +65,8 @@ public class LaserPrinter implements ServicePrinter{
                 e.printStackTrace();
             }
         }
-        System.out.println("Toner Cartridge level need to refilled...");
-        currentTonerLevel += PAGES_PER_TONER_CARTRIDGE;
+        System.out.println("Toner Cartridge level needs to refilled...");
+        currentTonerLevel = FULL_TONER_LEVEL;
         this.tonerReplaced = true;
         System.out.println("Replace of Toner Cartridge is done. New toner level is " + currentTonerLevel);
         notifyAll();
@@ -77,7 +77,7 @@ public class LaserPrinter implements ServicePrinter{
         this.paperRefilled = false;
         boolean unableToRefillPaper = (FULL_PAPER_TRAY -50) <= currentPaperLevel;
         while (unableToRefillPaper){
-            System.out.println("(PAPER LEVEL CHECK...) Paper Tray level is available... Current paper level is " + currentPaperLevel);
+            System.out.println("(CHECKING ON THE PAPER LEVEL...) Paper Tray level is available... Current paper level is " + currentPaperLevel);
             try {
                 wait(5000);
                 unableToRefillPaper = (FULL_PAPER_TRAY -50) <= currentPaperLevel;
@@ -107,12 +107,13 @@ public class LaserPrinter implements ServicePrinter{
 
     @Override
     public synchronized String toString() {
-        return "Laser Printer Report" +
-                "\n--------------------"+
-                "\n* Printer Name => " + nameOfPrinter +
-                "\n* Printer ID => " + idOfPrinter +
-                "\n* Paper Level => " + currentPaperLevel +
-                "\n* Toner Level => " + currentTonerLevel +
-                "\n* No of Documents Printed => " + numOfDocPrinted;
+        return "|######################################|\n" +
+                "|         Laser Printer Report         |" +
+                "\n|######################################|"+
+                "\n\t* Printer Name => " + nameOfPrinter +
+                "\n\t* Printer ID => " + idOfPrinter +
+                "\n\t* Paper Level => " + currentPaperLevel +
+                "\n\t* Toner Level => " + currentTonerLevel +
+                "\n\t* No of Documents Printed => " + numOfDocPrinted;
     }
 }

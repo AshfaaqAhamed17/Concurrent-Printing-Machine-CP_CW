@@ -1,14 +1,10 @@
 //THREAD CLASS
-public class Student implements Runnable{
+public class Student extends Thread{
 
-    private String studentName;
-    private ThreadGroup studentThreadGroup;
     private Printer printer;
 
     public Student(String studentName, ThreadGroup studentThreadGroup, Printer printer) {
-        super();
-        this.studentName = studentName;
-        this.studentThreadGroup = studentThreadGroup;
+        super(studentThreadGroup, studentName);
         this.printer = printer;
     }
 
@@ -27,7 +23,7 @@ public class Student implements Runnable{
             printer.printDocument(documentContext);
             numberOfTotalPages+=documentContext.getNumberOfPages();
 
-            int num = ((int)(Math.random())*100 + 1);
+            int num = ((int)(Math.random()*5000 + 1));
             try {
                 Thread.sleep(num);
             } catch (InterruptedException e) {

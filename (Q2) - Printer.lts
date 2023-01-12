@@ -1,0 +1,31 @@
+range RANGE_OF_PAPER_TRAY = 0..3
+const EMPTY_PAPER_TRAY_VALUE = 0
+const FULL_PAPER_TRAY_VALUE = 3
+
+// ones who acess the printer
+set Students = { student_one, student_two }
+set Users = { Students, technician }
+
+// Prohibited students and technicians actions separately
+set ProhibitedActionsForStudent = { acquireToRefill, fill, cannotFill }
+set ProhibitedActionsForTechnician = { acquireToPrint }
+
+MY_PRINTER = PRINTER_IN_OPERATION[FULL_PAPER_TRAY_VALUE],
+PRINTER_IN_OPERATION[papersInTray: RANGE_OF_PAPER_TRAY] = 
+									if (papersInTray > EMPTY_PAPER_TRAY_VALUE)// paper level in tray is suffiecient
+									then (acquireToPrint -> release -> PRINTER_IN_OPERATION[papersInTray - 1]
+											| acquireToRefill -> cannotFill -> release -> PRINTER_IN_OPERATION[papersInTray])
+									else // paper limit in the printer is over
+										(acquireToRefill -> fill -> release -> PRINTER_IN_OPERATION[FULL_PAPER_TRAY_VALUE]).
+
+STUDENT_PROCESS(DOCUMENTS = 1) = USE_THE_PRINTER[1],
+USE_THE_PRINTER[documentNumber: 1..DOCUMENTS] = (acquireToPrint -> printDocument[documentNumber] -> release ->
+								if(documentNumber + 1 <= DOCUMENTS) // Checking if the students documents are not yet printed
+								then USE_THE_PRINTER[documentNumber + 1] // print students next document using the printer in the next turn
+								else (terminate -> END)) + ProhibitedActionsForStudent.
+
+TECHNICIAN_PROCESS = (acquireToRefill -> { fill, cannotFill } -> release -> TECHNICIAN_PROCESS | terminate -> END) + ProhibitedActionsForTechnician.
+
+||PRINTING_SYSTEM_COMPOSITION = (student_one: STUDENT_PROCESS(3) || student_two: STUDENT_PROCESS(2) || technician: TECHNICIAN_PROCESS || Users :: MY_PRINTER) 
+		/ {terminate/Users.terminate}. 
+ // All Users needs to be terminated synchronously 

@@ -5,10 +5,11 @@ public class PrintingSystem {
 
     public static void main(String[] args) throws InterruptedException {
 
+//        Thread groups used in the system.
         ThreadGroup students = new ThreadGroup("students");
         ThreadGroup technicians = new ThreadGroup("technicians");
 
-        ServicePrinter laserPrinter = new LaserPrinter("IIT - Printer", 2019394, 45, 50, students);
+        ServicePrinter laserPrinter = new LaserPrinter("IIT - Printer", 2019394, 10, 10);
         System.out.println("===================INITIAL STATE OF THE PRINTER===================\n");
         System.out.println(laserPrinter);
         System.out.println("\n==================================================================");
@@ -16,23 +17,17 @@ public class PrintingSystem {
         System.out.println("                   <<Printer starting the printing process>>");
         System.out.println("                   -----------------------------------------\n");
 
+//        Initialize the Student threads
+        Thread threadStudentNoOne = new Student("Student 01", students, laserPrinter);
+        Thread threadStudentNoTwo = new Student("Student 02", students, laserPrinter);
+        Thread threadStudentNoThree = new Student("Student 03", students, laserPrinter);
+        Thread threadStudentNoFour = new Student("Student 04", students, laserPrinter);
 
-        Runnable runnableStudent1 = new Student("Student 01", students, laserPrinter);
-        Runnable runnableStudent2 = new Student("Student 02", students, laserPrinter);
-        Runnable runnableStudent3 = new Student("Student 03", students, laserPrinter);
-        Runnable runnableStudent4 = new Student("Student 04", students, laserPrinter);
+//        Initialize the Technician threads
+        Thread paperTechnician = new PaperTechnician("Tech 01", technicians, laserPrinter);
+        Thread tonerTechnician = new TonerTechnician("Tech 02", technicians, laserPrinter);
 
-        Thread threadStudentNoOne = new Thread(students, runnableStudent1, "Student 001");
-        Thread threadStudentNoTwo = new Thread(students, runnableStudent2, "Student 002");
-        Thread threadStudentNoThree = new Thread(students, runnableStudent3, "Student 003");
-        Thread threadStudentNoFour = new Thread(students, runnableStudent4, "Student 004");
-
-        Runnable runnablePaperTechnician = new PaperTechnician("Tech 01", technicians, laserPrinter);
-        Runnable runnableTonerTechnician = new TonerTechnician("Tech 02", technicians, laserPrinter);
-
-        Thread paperTechnician = new Thread(technicians, runnablePaperTechnician, "Tech 01");
-        Thread tonerTechnician = new Thread(technicians, runnableTonerTechnician, "Tech 02");
-
+//        Start the student & technician threads and wait for the execution time in the runnable state
         threadStudentNoOne.start();
         threadStudentNoTwo.start();
         threadStudentNoThree.start();
@@ -40,6 +35,7 @@ public class PrintingSystem {
         paperTechnician.start();
         tonerTechnician.start();
 
+//        Print summary after all threads are terminated.
         threadStudentNoOne.join();
         threadStudentNoTwo.join();
         threadStudentNoThree.join();
@@ -48,7 +44,6 @@ public class PrintingSystem {
         tonerTechnician.join();
 
         System.out.println("\n===============| All tasks completed. Printing printer status... |===============");
-
 
         optionMenu:
         while (true) {

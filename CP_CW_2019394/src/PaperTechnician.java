@@ -1,19 +1,11 @@
 //THREAD CLASS
-public class PaperTechnician implements Runnable{
+public class PaperTechnician extends Thread{
 
-    private String technicianName;
-    private ThreadGroup technicianThreadGroup;
     private ServicePrinter servicePrinter;
 
     public PaperTechnician(String technicianName, ThreadGroup technicianThreadGroup, ServicePrinter servicePrinter) {
-        super();
-        this.technicianName = technicianName;
-        this.technicianThreadGroup = technicianThreadGroup;
+        super(technicianThreadGroup, technicianName);
         this.servicePrinter = servicePrinter;
-    }
-
-    public String getTechnicianName() {
-        return technicianName;
     }
 
     @Override
@@ -24,13 +16,13 @@ public class PaperTechnician implements Runnable{
             if (((LaserPrinter)servicePrinter).isPaperRefilled()){
                 paperPacksCount++;
             }
-            int num = ((int)(Math.random())*100 + 1);
+            int num = ((int)(Math.random()*5000 + 1));
             try {
                 Thread.sleep(num);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        System.out.println("Paper Technician " + getTechnicianName() +" finished refilling printer with [" + paperPacksCount + "] paper packs.");
+        System.out.println("[[Paper Technician]] " + Thread.currentThread().getName() +" finished refilling printer with [" + paperPacksCount + "] paper packs.");
     }
 }

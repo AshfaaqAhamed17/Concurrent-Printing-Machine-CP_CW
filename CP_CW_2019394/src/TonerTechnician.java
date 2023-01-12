@@ -1,19 +1,11 @@
 //THREAD CLASS
-public class TonerTechnician implements Runnable {
+public class TonerTechnician extends Thread {
 
-    private String technicianName;
-    private ThreadGroup technicianThreadGroup;
     private ServicePrinter servicePrinter;
 
     public TonerTechnician(String technicianName, ThreadGroup technicianThreadGroup, ServicePrinter servicePrinter) {
-        super();
-        this.technicianName = technicianName;
-        this.technicianThreadGroup = technicianThreadGroup;
+        super(technicianThreadGroup, technicianName);
         this.servicePrinter = servicePrinter;
-    }
-
-    public String getTechnicianName() {
-        return technicianName;
     }
 
     @Override
@@ -24,13 +16,13 @@ public class TonerTechnician implements Runnable {
             if (((LaserPrinter)servicePrinter).isTonerReplaced()){
                 tonerCartridgeCount++;
             }
-            int num = ((int)(Math.random())*100 + 1);
+            int num = ((int)(Math.random()*5000 + 1));
             try {
                 Thread.sleep(num);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        System.out.println("Toner Technician " + getTechnicianName() + " finished replacing printer with [" + tonerCartridgeCount + "] toner cartridge.");
+        System.out.println("[[Toner Technician]] " + Thread.currentThread().getName() + " finished replacing printer with [" + tonerCartridgeCount + "] toner cartridge.");
     }
 }

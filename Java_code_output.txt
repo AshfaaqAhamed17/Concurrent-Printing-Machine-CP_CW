@@ -1,0 +1,114 @@
+"C:\Program Files\Java\jdk1.8.0_251\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.2\lib\idea_rt.jar=60726:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.2\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_251\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\rt.jar;D:\IIT\4th YEAR\Concurrent Programming\#CW\2019394_CW\CP_CW_2019394\out\production\CP_CW_2019394" PrintingSystem
+===================INITIAL STATE OF THE PRINTER===================
+
+|######################################|
+|         Laser Printer Report         |
+|######################################|
+	* Printer Name => IIT - Printer
+	* Printer ID => 2019394
+	* Paper Level => 10
+	* Toner Level => 10
+	* No of Documents Printed => 0
+
+==================================================================
+==================================================================
+
+
+                   <<Printer starting the printing process>>
+                   -----------------------------------------
+
+Paper Tray needs to be refilled.
+Refill of Paper Tray is done. New paper level is 60
+(CHECKING ON THE TONER LEVEL...) Toner Cartridge level is available... Current toner level is 10
+	Printing document... NAME OF STUDENT: Student 01 | DOCUMENT TITLE: Module No. 001 | NUMBER OF PAGES: 2
+	<<Document No. 1>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {58}. New Toner Level: {8}.
+MINIMUM TONER LEVEL HAS BEEN REACHED -> Printing document pause. -- NAME OF STUDENT: Student 02 | DOCUMENT TITLE: Module No. 001 | NUMBER OF PAGES: 2
+MINIMUM TONER LEVEL HAS BEEN REACHED -> Printing document pause. -- NAME OF STUDENT: Student 04 | DOCUMENT TITLE: Module No. 001 | NUMBER OF PAGES: 2
+MINIMUM TONER LEVEL HAS BEEN REACHED -> Printing document pause. -- NAME OF STUDENT: Student 03 | DOCUMENT TITLE: Module No. 001 | NUMBER OF PAGES: 2
+Toner Cartridge level needs to replaced...
+Replace of Toner Cartridge is done. New toner level is 500
+	Printing document... NAME OF STUDENT: Student 03 | DOCUMENT TITLE: Module No. 001 | NUMBER OF PAGES: 2
+	<<Document No. 2>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {56}. New Toner Level: {498}.
+	Printing document... NAME OF STUDENT: Student 04 | DOCUMENT TITLE: Module No. 001 | NUMBER OF PAGES: 2
+	<<Document No. 3>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {54}. New Toner Level: {496}.
+	Printing document... NAME OF STUDENT: Student 02 | DOCUMENT TITLE: Module No. 001 | NUMBER OF PAGES: 2
+	<<Document No. 4>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {52}. New Toner Level: {494}.
+(CHECKING ON THE TONER LEVEL...) Toner Cartridge level is available... Current toner level is 494
+	Printing document... NAME OF STUDENT: Student 04 | DOCUMENT TITLE: Module No. 002 | NUMBER OF PAGES: 5
+	<<Document No. 5>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {47}. New Toner Level: {489}.
+	Printing document... NAME OF STUDENT: Student 03 | DOCUMENT TITLE: Module No. 002 | NUMBER OF PAGES: 5
+	<<Document No. 6>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {42}. New Toner Level: {484}.
+	Printing document... NAME OF STUDENT: Student 01 | DOCUMENT TITLE: Module No. 002 | NUMBER OF PAGES: 5
+	<<Document No. 7>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {37}. New Toner Level: {479}.
+	Printing document... NAME OF STUDENT: Student 04 | DOCUMENT TITLE: Module No. 003 | NUMBER OF PAGES: 10
+	<<Document No. 8>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {27}. New Toner Level: {469}.
+	Printing document... NAME OF STUDENT: Student 01 | DOCUMENT TITLE: Module No. 003 | NUMBER OF PAGES: 10
+	<<Document No. 9>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {17}. New Toner Level: {459}.
+[[Toner Technician]] Tech 02 finished replacing printer with [1] toner cartridge.
+Paper Tray needs to be refilled.
+Refill of Paper Tray is done. New paper level is 67
+	Printing document... NAME OF STUDENT: Student 02 | DOCUMENT TITLE: Module No. 002 | NUMBER OF PAGES: 5
+	<<Document No. 10>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {62}. New Toner Level: {454}.
+Paper Tray needs to be refilled.
+Refill of Paper Tray is done. New paper level is 112
+	Printing document... NAME OF STUDENT: Student 04 | DOCUMENT TITLE: Module No. 004 | NUMBER OF PAGES: 8
+	<<Document No. 11>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {104}. New Toner Level: {446}.
+	Printing document... NAME OF STUDENT: Student 02 | DOCUMENT TITLE: Module No. 003 | NUMBER OF PAGES: 10
+	<<Document No. 12>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {94}. New Toner Level: {436}.
+	Printing document... NAME OF STUDENT: Student 01 | DOCUMENT TITLE: Module No. 004 | NUMBER OF PAGES: 8
+	<<Document No. 13>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {86}. New Toner Level: {428}.
+	Printing document... NAME OF STUDENT: Student 03 | DOCUMENT TITLE: Module No. 003 | NUMBER OF PAGES: 10
+	<<Document No. 14>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {76}. New Toner Level: {418}.
+[[Paper Technician]] Tech 01 finished refilling printer with [3] paper packs.
+	Printing document... NAME OF STUDENT: Student 04 | DOCUMENT TITLE: Module No. 005 | NUMBER OF PAGES: 15
+	<<Document No. 15>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {61}. New Toner Level: {403}.
+	Printing document... NAME OF STUDENT: Student 01 | DOCUMENT TITLE: Module No. 005 | NUMBER OF PAGES: 15
+	<<Document No. 16>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {46}. New Toner Level: {388}.
+	Printing document... NAME OF STUDENT: Student 02 | DOCUMENT TITLE: Module No. 004 | NUMBER OF PAGES: 8
+	<<Document No. 17>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {38}. New Toner Level: {380}.
+ ------>> Student 04 finished Printing: 5 Documents, 40 pages <<------
+ ------>> Student 01 finished Printing: 5 Documents, 40 pages <<------
+	Printing document... NAME OF STUDENT: Student 03 | DOCUMENT TITLE: Module No. 004 | NUMBER OF PAGES: 8
+	<<Document No. 18>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {30}. New Toner Level: {372}.
+	Printing document... NAME OF STUDENT: Student 02 | DOCUMENT TITLE: Module No. 005 | NUMBER OF PAGES: 15
+	<<Document No. 19>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {15}. New Toner Level: {357}.
+ ------>> Student 02 finished Printing: 5 Documents, 40 pages <<------
+	Printing document... NAME OF STUDENT: Student 03 | DOCUMENT TITLE: Module No. 005 | NUMBER OF PAGES: 15
+	<<Document No. 20>> SUCCESSFULLY PRINTED DOCUMENT. New paper level: {0}. New Toner Level: {342}.
+ ------>> Student 03 finished Printing: 5 Documents, 40 pages <<------
+
+===============| All tasks completed. Printing printer status... |===============
+
+
+	 (1) - Print printer summary
+	 (2) - End system
+		 -- Select option: 1
+===========================================================================================================
+                                                PRINTER SUMMARY                                           
+===========================================================================================================
+|######################################|
+|         Laser Printer Report         |
+|######################################|
+	* Printer Name => IIT - Printer
+	* Printer ID => 2019394
+	* Paper Level => 0
+	* Toner Level => 342
+	* No of Documents Printed => 20
+
+
+	 (1) - Print printer summary
+	 (2) - End system
+		 -- Select option: zx
+
+------------------------------Invalid Option------------------------------
+
+
+
+	 (1) - Print printer summary
+	 (2) - End system
+		 -- Select option: 2
+=========================================================================================================
+=                                 Thank you for using "IIT - Printer"                                   =
+=========================================================================================================
+
+Process finished with exit code 0
